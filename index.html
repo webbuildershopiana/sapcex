@@ -71,7 +71,7 @@
 
 <style type="text/css">
 
-* { box-sizing: border-box; } body {margin: 0;}#iz9o{background-color:grey;}.swiper{height:80vh;}.swiper-slide{height:80vh !important;}
+* { box-sizing: border-box; } body {margin: 0;}#iz9o{background-color:grey;}.swiper{height:80vh;}.swiper-slide{height:80vh !important;}#izb7i{padding:10px;}
 
 </style>
 
@@ -79,26 +79,29 @@
 		<html>
  <head></head>
  <body id="iz9o">
-  <div id="iboy">
+  <div id="ieeg">
    <div class="swiper w-100 mySwiper">
     <div class="swiper-wrapper">
      <div class="swiper-slide">
-      <img src="https://images.unsplash.com/photo-1630926906914-f98970d8894c?q=80&amp;w=1932&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D  " alt="swiper-image" id="ip3c" class="swiper-image w-100 h-100">
+      <img src="https://images.unsplash.com/photo-1630926906914-f98970d8894c?q=80&amp;w=1932&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D  " alt="swiper-image" class="swiper-image w-100 h-100">
      </div>
      <div class="swiper-slide">
       <img src="https://images.unsplash.com/photo-1678366633411-fafa89580dea?q=80&amp;w=1932&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="swiper-image" class="swiper-image w-100 h-100">
      </div>
      <div class="swiper-slide">
-      <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?q=80&amp;w=2058&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="swiper-image" id="i0rg" class="swiper-image w-100 h-100">
+      <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?q=80&amp;w=2058&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="swiper-image" class="swiper-image w-100 h-100">
      </div>
     </div>
-    <div class="swiper-button-next" id="ikv7l"></div>
-    <div class="swiper-button-prev" id="iyor6"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
     <div class="swiper-scrollbar"></div>
    </div>
   </div>
-  <script>var props = {"iboy":{"autoplay":true,"loop":false,"scrollbar":{"enabled":false},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"},"direction":"horizontal","paginationType":"bullets","initialSlide":1,"speed":300,"dynamicBullets":false,"clickable":false,"effect":"slide"}};
+  <div id="izb7i">
+   Insert your text here
+  </div>
+  <script>var props = {"ieeg":{"autoplay":true,"loop":false,"scrollbar":{"enabled":false},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"},"direction":"horizontal","paginationType":"bullets","initialSlide":1,"speed":300,"dynamicBullets":false,"clickable":false,"effect":"slide"}};
           var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
           var els = document.querySelectorAll(ids);
           for (var i = 0, len = els.length; i < len; i++) {
@@ -154,13 +157,19 @@
                 loop,
                 autoplay,
                 scrollbar,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                navigation,
+                direction,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: paginationType,
+                    dynamicBullets,
+                    clickable,
                 },
+                initialSlide: initialSlide - 1,
+                effect,
                 observer: true,
             });
-            // // Update swiper on any change
+            // Update swiper on any change
             swiper && swiper.on('observerUpdate', function () {
                 swiper.update();
                 swiper.updateSlides();
